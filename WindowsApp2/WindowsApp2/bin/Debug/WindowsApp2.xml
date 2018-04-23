@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+WindowsApp2
+</name>
+</assembly>
+<members>
+<member name="T:WindowsApp2.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:WindowsApp2.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:WindowsApp2.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="F:WindowsApp2.Form1._inipath">
+ <summary>
+ Create a New INI file to store or load data
+ </summary>
+</member>
+<member name="M:WindowsApp2.Form1.IniWriteValue(System.String,System.String,System.String)">
+ <summary>
+ Write Data to the INI File
+ </summary>
+ <PARAM name="Section"></PARAM>
+ Section name
+ <PARAM name="Key"></PARAM>
+ Key Name
+ <PARAM name="Value"></PARAM>
+ Value Name
+</member>
+<member name="M:WindowsApp2.Form1.IniReadValue(System.String,System.String)">
+ <summary>
+ Read Data Value From the Ini File
+ </summary>
+ <PARAM name="Section"></PARAM>
+ <PARAM name="Key"></PARAM>
+ <PARAM name="Path"></PARAM>
+ <returns></returns>
+</member>
+</members>
+</doc>
