@@ -1,3 +1,4 @@
+@echo off
 taskkill /f /im WindowsApp2.exe
 TIMEOUT 2
 del "WindowsApp2.exe"
