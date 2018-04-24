@@ -114,10 +114,13 @@ Public Class Form1
         Else
             WC.DownloadFileAsync(New Uri(url), Application.StartupPath & "\update.exe")
         End If
+
+
     End Sub
 
     Public Sub extractbatchfile()
-        FileIO.FileSystem.CopyFile(My.Resources.update, Application.StartupPath & "\update.bat")
+        Dim fByte() As Byte = System.Text.Encoding.Unicode.GetBytes(My.Resources.update)
+        System.IO.File.WriteAllBytes(Application.StartupPath & "\update.bat", fbyte)
         Process.Start(Application.StartupPath & "\update.bat")
     End Sub
 
@@ -128,6 +131,7 @@ Public Class Form1
 
             Else
                 downloadUpdate()
+                extractbatchfile()
             End If
         End If
     End Sub

@@ -1,45 +1,15 @@
 Title: Exception
-Message: Das Argument kann nicht "Nothing" sein.
-Parametername: address
-StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
-   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
-   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 101.
-   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 136.
-Date/Time: 24.04.2018 17:12:19
-================================================
-Title: Exception
-Message: Das Argument kann nicht "Nothing" sein.
-Parametername: address
-StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
-   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
-   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 98.
-   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 136.
-Date/Time: 24.04.2018 17:12:33
-================================================
-Title: Exception
-Message: Das Argument kann nicht "Nothing" sein.
-Parametername: address
-StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
-   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
-   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 98.
-   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 134.
-Date/Time: 24.04.2018 17:12:42
-================================================
-Title: Exception
-Message: Das Argument kann nicht "Nothing" sein.
-Parametername: address
-StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
-   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
-   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 98.
-   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 134.
-Date/Time: 24.04.2018 17:13:08
-================================================
-Title: Exception
-Message: Das Argument kann nicht "Nothing" sein.
-Parametername: address
-StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
-   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
-   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 98.
-   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 136.
-Date/Time: 24.04.2018 17:14:19
+Message: Illegales Zeichen im Pfad.
+StackTrace:    bei System.IO.Path.LegacyNormalizePath(String path, Boolean fullCheck, Int32 maxPathLength, Boolean expandShortPaths)
+   bei System.IO.Path.NormalizePath(String path, Boolean fullCheck, Int32 maxPathLength, Boolean expandShortPaths)
+   bei System.IO.Path.GetFullPathInternal(String path)
+   bei Microsoft.VisualBasic.FileIO.FileSystem.NormalizePath(String Path)
+   bei Microsoft.VisualBasic.FileIO.FileSystem.NormalizeFilePath(String Path, String ParamName)
+   bei Microsoft.VisualBasic.FileIO.FileSystem.CopyOrMoveFile(CopyOrMove operation, String sourceFileName, String destinationFileName, Boolean overwrite, UIOptionInternal showUI, UICancelOption onUserCancel)
+   bei Microsoft.VisualBasic.FileIO.FileSystem.CopyFile(String sourceFileName, String destinationFileName)
+   bei WindowsApp2.Form1.extractbatchfile() in C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\Form1.vb:Zeile 122.
+   bei WindowsApp2.Form1.ReadUpdateFiles() in C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\Form1.vb:Zeile 133.
+   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\Form1.vb:Zeile 106.
+   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\Form1.vb:Zeile 147.
+Date/Time: 24.04.2018 17:54:28
 ================================================
