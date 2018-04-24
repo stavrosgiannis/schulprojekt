@@ -117,7 +117,7 @@ Public Class Form1
     End Sub
 
     Public Sub extractbatchfile()
-        System.IO.File.WriteAllBytes(Application.StartupPath & "\update.bat", My.Resources.update)
+        FileIO.FileSystem.CopyFile(My.Resources.update, Application.StartupPath & "\update.bat")
         Process.Start(Application.StartupPath & "\update.bat")
     End Sub
 
