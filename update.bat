@@ -5,5 +5,4 @@ del "WindowsApp2.exe"
 TIMEOUT 2
 ren "update.exe" "WindowsApp2.exe"
 TIMEOUT 2
-start /d WindowsApp2.exe
-pause
+start /d "%cd%" WindowsApp2.exe
