@@ -10,7 +10,6 @@ C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.exe
 C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.xml
 C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.pdb
 C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.Form1.resources
-C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.vbprojResolveAssemblyReference.cache
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.Form1.resources
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.Resources.resources
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.vbproj.GenerateResource.cache
@@ -22,3 +21,4 @@ C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\Win
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\WindowsApp2.exe
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\WindowsApp2.pdb
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\WindowsApp2.xml
+C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.vbprojResolveAssemblyReference.cache

@@ -61,27 +61,10 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die &lt;?php
-        '''session_start();
-        '''
-        '''			
-        '''		
-        '''			$anwender_name=$_SESSION[&apos;anwender_name&apos;];
-        '''			$id_anwender=$_SESSION[&apos;id_anwender&apos;];
-        '''			$test = $_GET[&apos;like&apos;];
-        '''			
-        '''				//Eine DB-Verbindung wird hergestellt
-        '''				$mysqli = new mysqli($host, $user, $pwd, $db);
-        '''
-        '''				if ($mysqli-&gt;connect_errno)
-        '''				{
-        '''					echo &quot;Anmeldung fehlgeschlagen: &quot;. $mysqli-&gt;connect_errno;
-        '''					exit(0);
-        '''				}
-        '''				//Der Zeichensatz zur Verstaendigung mit der DB wird festgelegt
-        '''				$mysqli-&gt;set_charset(&quot;utf8&quot;);
-        '''				
-        '''				$select_anweisun [Rest der Zeichenfolge wurde abgeschnitten]&quot;; ähnelt.
+        '''  Sucht eine lokalisierte Zeichenfolge, die taskkill /f /im WindowsApp2.exe
+        '''del &quot;WindowsApp2.exe&quot;
+        '''ren &quot;update.exe&quot; &quot;WindowsApp2.exe&quot;
+        '''start /d WindowsApp2.exe ähnelt.
         '''</summary>
         Friend ReadOnly Property update() As String
             Get
