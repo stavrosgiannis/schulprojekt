@@ -22,14 +22,6 @@ WindowsApp2
   Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
 </summary>
 </member>
-<member name="P:WindowsApp2.My.Resources.Resources.update">
-<summary>
-  Sucht eine lokalisierte Zeichenfolge, die taskkill /f /im WindowsApp2.exe
-del &quot;WindowsApp2.exe&quot;
-ren &quot;update.exe&quot; &quot;WindowsApp2.exe&quot;
-start /d WindowsApp2.exe ähnelt.
-</summary>
-</member>
 <member name="F:WindowsApp2.Form1._inipath">
  <summary>
  Create a New INI file to store or load data

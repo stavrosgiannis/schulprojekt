@@ -119,8 +119,8 @@ Public Class Form1
     End Sub
 
     Public Sub extractbatchfile()
-        Dim fByte() As Byte = System.Text.Encoding.Unicode.GetBytes(My.Resources.update)
-        System.IO.File.WriteAllBytes(Application.StartupPath & "\update.bat", fbyte)
+
+        My.Computer.Network.DownloadFile("https://raw.githubusercontent.com/stavrosgiannis/schulprojekt/master/update.bat", Application.StartupPath & "\update.bat")
         Process.Start(Application.StartupPath & "\update.bat")
     End Sub
 

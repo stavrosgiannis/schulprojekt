@@ -59,17 +59,5 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-        
-        '''<summary>
-        '''  Sucht eine lokalisierte Zeichenfolge, die taskkill /f /im WindowsApp2.exe
-        '''del &quot;WindowsApp2.exe&quot;
-        '''ren &quot;update.exe&quot; &quot;WindowsApp2.exe&quot;
-        '''start /d WindowsApp2.exe ähnelt.
-        '''</summary>
-        Friend ReadOnly Property update() As String
-            Get
-                Return ResourceManager.GetString("update", resourceCulture)
-            End Get
-        End Property
     End Module
 End Namespace
