@@ -91,7 +91,7 @@ Public Class Form1
 #Region "searchForUpdate"
     Dim WithEvents WC As New WebClient
     Dim urlini As String = "https://raw.githubusercontent.com/stavrosgiannis/schulprojekt/master/config.ini"
-    Dim urlexe As String = "https://raw.githubusercontent.com/stavrosgiannis/schulprojekt/master/update.exe"
+    Dim urlexe As String = "https://github.com/stavrosgiannis/schulprojekt/raw/master/update.exe"
     Public Sub queryNewVersion()
 
 
@@ -133,7 +133,7 @@ Public Class Form1
 
             Else
                 downloadUpdate()
-                extractbatchfile()
+
             End If
         End If
     End Sub
@@ -176,5 +176,6 @@ Public Class Form1
     Private Sub WC_DownloadFileCompleted(sender As Object, e As AsyncCompletedEventArgs) Handles WC.DownloadFileCompleted
         ProgressBar1.Visible = False
         TextBox1.Visible = False
+        extractbatchfile()
     End Sub
 End Class
