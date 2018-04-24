@@ -1,7 +1,9 @@
 ﻿Imports System.IO
-Imports System
+Imports System.Net
 Imports System.Runtime.InteropServices
 Imports System.Text
+Imports System.ComponentModel
+
 Public Class Form1
 
 #Region "ini. API"
@@ -86,18 +88,55 @@ Public Class Form1
     End Sub
 #End Region
 
+#Region "searchForUpdate"
+    Dim WithEvents WC As New WebClient
+    Dim url As String = "https://raw.githubusercontent.com/stavrosgiannis/schulprojekt/master/config.ini"
+    Public Sub queryNewVersion()
+
+
+        If My.Computer.FileSystem.FileExists(_inipath) = False Then
+            My.Computer.Network.DownloadFile(url, _inipath)
+            IniWriteValue("update", "url", url)
+        Else
+            My.Computer.FileSystem.DeleteFile(_inipath, FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
+            My.Computer.Network.DownloadFile(url, _inipath)
+            IniWriteValue("update", "url", url)
+        End If
+
+        ReadUpdateFiles()
+
+    End Sub
+
+    Public Sub downloadUpdate()
+        If My.Computer.FileSystem.FileExists(Application.StartupPath & "\update.exe") Then
+            My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\update.exe", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
+            WC.DownloadFileAsync(New Uri(url), Application.StartupPath & "\update.exe")
+        Else
+            WC.DownloadFileAsync(New Uri(url), Application.StartupPath & "\update.exe")
+        End If
+    End Sub
+
+    Public Sub ReadUpdateFiles()
+        If My.Computer.FileSystem.FileExists(_inipath) Then
+            Dim iniversion As String = IniReadValue("update", "version")
+            If iniversion <= Application.ProductVersion Then
+
+            Else
+                downloadUpdate()
+            End If
+        End If
+    End Sub
+
+
+#End Region
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
-
-
-
             'Initializing frameworks
-            If My.Computer.FileSystem.FileExists(_inipath) Then
-                MsgBox(IniReadValue("SECTION", "KEY"))
-            Else
+            queryNewVersion()
 
 
-            End If
+
         Catch ex As Exception
             WriteToErrorLog(ex.Message, ex.StackTrace, "Exception")
             MsgBox("Oops! Looks like something went wrong..", MsgBoxStyle.Critical)
@@ -106,6 +145,22 @@ Public Class Form1
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        IniWriteValue("SECTION", "KEY", "VALUE")
+
+    End Sub
+
+    Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        ' IniWriteValue("application", "Version", Application.ProductVersion)
+    End Sub
+
+    Private Sub WC_DownloadProgressChanged(sender As Object, e As DownloadProgressChangedEventArgs) Handles WC.DownloadProgressChanged
+        ProgressBar1.Visible = True
+        TextBox1.Visible = True
+        ProgressBar1.Value = e.ProgressPercentage
+        TextBox1.Text = e.ProgressPercentage & "% " & e.BytesReceived & "/" & e.TotalBytesToReceive
+    End Sub
+
+    Private Sub WC_DownloadFileCompleted(sender As Object, e As AsyncCompletedEventArgs) Handles WC.DownloadFileCompleted
+        ProgressBar1.Visible = False
+        TextBox1.Visible = False
     End Sub
 End Class

@@ -1,0 +1,45 @@
+Title: Exception
+Message: Das Argument kann nicht "Nothing" sein.
+Parametername: address
+StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
+   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
+   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 101.
+   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 136.
+Date/Time: 24.04.2018 17:12:19
+================================================
+Title: Exception
+Message: Das Argument kann nicht "Nothing" sein.
+Parametername: address
+StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
+   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
+   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 98.
+   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 136.
+Date/Time: 24.04.2018 17:12:33
+================================================
+Title: Exception
+Message: Das Argument kann nicht "Nothing" sein.
+Parametername: address
+StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
+   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
+   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 98.
+   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 134.
+Date/Time: 24.04.2018 17:12:42
+================================================
+Title: Exception
+Message: Das Argument kann nicht "Nothing" sein.
+Parametername: address
+StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
+   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
+   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 98.
+   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 134.
+Date/Time: 24.04.2018 17:13:08
+================================================
+Title: Exception
+Message: Das Argument kann nicht "Nothing" sein.
+Parametername: address
+StackTrace:    bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName, String userName, String password, Boolean showUI, Int32 connectionTimeout, Boolean overwrite, UICancelOption onUserCancel)
+   bei Microsoft.VisualBasic.Devices.Network.DownloadFile(String address, String destinationFileName)
+   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 98.
+   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\WindowsApp2\WindowsApp2\Form1.vb:Zeile 136.
+Date/Time: 24.04.2018 17:14:19
+================================================
