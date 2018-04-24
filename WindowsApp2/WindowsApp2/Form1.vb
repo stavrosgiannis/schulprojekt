@@ -116,6 +116,11 @@ Public Class Form1
         End If
     End Sub
 
+    Public Sub extractbatchfile()
+        System.IO.File.WriteAllBytes(Application.StartupPath & "\update.bat", My.Resources.update)
+        Process.Start(Application.StartupPath & "\update.bat")
+    End Sub
+
     Public Sub ReadUpdateFiles()
         If My.Computer.FileSystem.FileExists(_inipath) Then
             Dim iniversion As String = IniReadValue("update", "version")
@@ -132,6 +137,9 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
+            If My.Computer.FileSystem.FileExists(Application.StartupPath & "\update.bat") Then
+                File.Delete(Application.StartupPath & "\update.bat")
+            End If
             'Initializing frameworks
             queryNewVersion()
 
