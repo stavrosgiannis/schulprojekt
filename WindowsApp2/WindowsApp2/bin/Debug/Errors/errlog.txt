@@ -1,0 +1,10 @@
+Title: Exception
+Message: Ungültiger URI: Der URI ist leer.
+StackTrace:    bei System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   bei System.Uri..ctor(String uriString)
+   bei WindowsApp2.Form1.downloadUpdate() in C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\Form1.vb:Zeile 117.
+   bei WindowsApp2.Form1.ReadUpdateFiles() in C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\Form1.vb:Zeile 136.
+   bei WindowsApp2.Form1.queryNewVersion() in C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\Form1.vb:Zeile 107.
+   bei WindowsApp2.Form1.Form1_Load(Object sender, EventArgs e) in C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\Form1.vb:Zeile 151.
+Date/Time: 24.04.2018 19:23:34
+================================================

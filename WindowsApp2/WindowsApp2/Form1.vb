@@ -90,17 +90,16 @@ Public Class Form1
 
 #Region "searchForUpdate"
     Dim WithEvents WC As New WebClient
-    Dim url As String = "https://raw.githubusercontent.com/stavrosgiannis/schulprojekt/master/config.ini"
+    Dim urlini As String = "https://raw.githubusercontent.com/stavrosgiannis/schulprojekt/master/config.ini"
+    Dim urlexe As String = "https://raw.githubusercontent.com/stavrosgiannis/schulprojekt/master/update.exe"
     Public Sub queryNewVersion()
 
 
         If My.Computer.FileSystem.FileExists(_inipath) = False Then
-            My.Computer.Network.DownloadFile(url, _inipath)
-            IniWriteValue("update", "url", url)
+            My.Computer.Network.DownloadFile(urlini, _inipath)
         Else
             My.Computer.FileSystem.DeleteFile(_inipath, FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
-            My.Computer.Network.DownloadFile(url, _inipath)
-            IniWriteValue("update", "url", url)
+            My.Computer.Network.DownloadFile(urlini, _inipath)
         End If
 
         ReadUpdateFiles()
@@ -108,12 +107,15 @@ Public Class Form1
     End Sub
 
     Public Sub downloadUpdate()
+        urlexe = IniReadValue("update", "urlexe")
+
         If My.Computer.FileSystem.FileExists(Application.StartupPath & "\update.exe") Then
             My.Computer.FileSystem.DeleteFile(Application.StartupPath & "\update.exe", FileIO.UIOption.OnlyErrorDialogs, FileIO.RecycleOption.DeletePermanently)
-            WC.DownloadFileAsync(New Uri(url), Application.StartupPath & "\update.exe")
+            WC.DownloadFileAsync(New Uri(urlexe), Application.StartupPath & "\update.exe")
         Else
-            WC.DownloadFileAsync(New Uri(url), Application.StartupPath & "\update.exe")
+            WC.DownloadFileAsync(New Uri(urlexe), Application.StartupPath & "\update.exe")
         End If
+
 
 
     End Sub
