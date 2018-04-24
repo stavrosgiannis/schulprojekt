@@ -1,6 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
-Imports System.Runtime.InteropServices
+Imports System.DirectoryServices
 Imports System.Text
 Imports System.ComponentModel
 
@@ -177,5 +177,45 @@ Public Class Form1
         ProgressBar1.Visible = False
         TextBox1.Visible = False
         extractbatchfile()
+    End Sub
+#Region "Active Directory"
+    Private Function GetActiveDirUserDetails(ByVal username As String) As String
+        Dim dirEntry As System.DirectoryServices.DirectoryEntry
+        Dim dirSearcher As System.DirectoryServices.DirectorySearcher
+        Try
+            dirEntry = New System.DirectoryServices.DirectoryEntry("LDAP://172.17.25.10:389/DC=bsidomain,DC=com")
+            dirSearcher = New System.DirectoryServices.DirectorySearcher(dirEntry)
+            dirSearcher.Filter = "(samAccountName=" & username & ")"
+            dirSearcher.PropertiesToLoad.Add("GivenName")
+            dirSearcher.PropertiesToLoad.Add("sn")
+            Dim sr As DirectoryServices.SearchResult = dirSearcher.FindOne()
+            If sr Is Nothing Then
+                Return False
+            End If
+
+            Dim de As System.DirectoryServices.DirectoryEntry = sr.GetDirectoryEntry()
+
+            Dim ObjFirstName As String = ""
+            Dim ObjLastName As String = String.Empty
+
+            Try
+                ObjFirstName = de.Properties("GivenName").Value.ToString()
+                ObjLastName = de.Properties("sn").Value.ToString()
+
+            Catch ex As Exception
+                ObjFirstName = de.Properties("DisplayName").Value.ToString()
+            End Try
+
+            MsgBox(ObjFirstName + ObjLastName)
+
+        Catch ex As Exception ' return false if exception occurs 
+            Return ex.Message
+        End Try
+
+    End Function
+#End Region
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
     End Sub
 End Class
