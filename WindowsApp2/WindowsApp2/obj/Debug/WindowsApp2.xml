@@ -47,5 +47,23 @@ WindowsApp2
  <PARAM name="Path"></PARAM>
  <returns></returns>
 </member>
+<member name="M:WindowsApp2.Form1.GetHttpContentWithToken(System.String,System.String)">
+ <summary>
+Perform an HTTP Get request To a URL Using an HTTP Authorization header
+</summary>
+<param name = "url" > The URL</param>
+<param name = "token" > The token</param>
+<returns>String containing the results Of the Get operation</returns>
+</member>
+<member name="M:WindowsApp2.Form1.DisplayBasicTokenInfo(Microsoft.Identity.Client.AuthenticationResult)">
+ <summary>
+ Display basic information contained in the token
+ </summary>
+</member>
+<member name="M:WindowsApp2.Form1.signout">
+ <summary>
+ Sign out the current user
+ </summary>
+</member>
 </members>
 </doc>

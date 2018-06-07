@@ -3,6 +3,7 @@ Imports System.Net
 Imports System.DirectoryServices
 Imports System.Text
 Imports System.ComponentModel
+Imports Microsoft.Identity.Client
 
 Public Class Form1
 
@@ -141,6 +142,70 @@ Public Class Form1
 
 #End Region
 
+
+
+    Private Shared ClientId As String = "8ff30cd3-989f-455f-9f68-17fc8091d76b"
+    Public Shared PublicClientApp As PublicClientApplication = New PublicClientApplication(ClientId)
+
+    'Set the API Endpoint to Graph 'me' endpoint
+    Dim _graphAPIEndpoint As String = "https://graph.microsoft.com/v1.0/me"
+    Dim _scopes As String() = New String() {"user.read"}
+
+    ''' <summary>
+    '''Perform an HTTP Get request To a URL Using an HTTP Authorization header
+    '''</summary>
+    '''<param name = "url" > The URL</param>
+    '''<param name = "token" > The token</param>
+    '''<returns>String containing the results Of the Get operation</returns>
+    Public Async Function GetHttpContentWithToken(ByVal url As String, ByVal token As String) As Task(Of String)
+        Dim httpClient = New System.Net.Http.HttpClient()
+        Dim response As System.Net.Http.HttpResponseMessage
+
+        Try
+            Dim request = New System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.[Get], url)
+            request.Headers.Authorization = New System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token)
+            response = Await httpClient.SendAsync(request)
+            Dim content = Await response.Content.ReadAsStringAsync()
+            Return content
+        Catch ex As Exception
+            Return ex.ToString()
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Display basic information contained in the token
+    ''' </summary>
+    Private Sub DisplayBasicTokenInfo(ByVal authResult As AuthenticationResult)
+        TokenInfoText.Text = ""
+
+        If authResult IsNot Nothing Then
+            TokenInfoText.Text += $"Name: {authResult.User.Name}" & Environment.NewLine
+            TokenInfoText.Text += $"Username: {authResult.User.DisplayableId}" & Environment.NewLine
+            TokenInfoText.Text += $"Token Expires: {authResult.ExpiresOn.ToLocalTime()}" & Environment.NewLine
+            TokenInfoText.Text += $"Access Token: {authResult.AccessToken}" & Environment.NewLine
+        End If
+    End Sub
+
+
+    ''' <summary>
+    ''' Sign out the current user
+    ''' </summary>
+    Private Function signout()
+        If PublicClientApp.Users.Any() Then
+
+            Try
+                PublicClientApp.Remove(PublicClientApp.Users.FirstOrDefault())
+                MsgBox("User has signed-out")
+            Catch ex As MsalException
+                MsgBox($"Error signing-out user: {ex.Message}")
+            End Try
+        End If
+    End Function
+
+    Sub test()
+
+    End Sub
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
             If My.Computer.FileSystem.FileExists(Application.StartupPath & "\update.bat") Then
@@ -217,5 +282,33 @@ Public Class Form1
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
+    End Sub
+
+    Private Async Sub Button4_ClickAsync(sender As Object, e As EventArgs) Handles CallGraphButton.Click
+        ' &lt;summary&gt;
+        ' Call AcquireTokenAsync - to acquire a token requiring user to sign-in
+        ' &lt;/summary&gt;
+        Dim authResult As AuthenticationResult = Nothing
+        Try
+            Try
+                authResult = Await PublicClientApp.AcquireTokenSilentAsync(_scopes, PublicClientApp.Users.FirstOrDefault())
+            Catch ex As MsalUiRequiredException
+                System.Diagnostics.Debug.WriteLine($"MsalUiRequiredException: {ex.Message}")
+            End Try
+            Try
+                authResult = Await PublicClientApp.AcquireTokenAsync(_scopes)
+            Catch msalex As MsalException
+                ResultText.Text = $"Error Acquiring Token:{System.Environment.NewLine}{msalex}"
+            End Try
+
+        Catch ex As Exception
+            ResultText.Text = $"Error Acquiring Token Silently:{System.Environment.NewLine}{ex}"
+            Return
+        End Try
+
+        If authResult IsNot Nothing Then
+            ResultText.Text = Await GetHttpContentWithToken(_graphAPIEndpoint, authResult.AccessToken)
+            DisplayBasicTokenInfo(authResult)
+        End If
     End Sub
 End Class
