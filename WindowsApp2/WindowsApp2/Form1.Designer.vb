@@ -101,6 +101,7 @@ Partial Class Form1
         Me.ResultText.Location = New System.Drawing.Point(12, 190)
         Me.ResultText.Multiline = True
         Me.ResultText.Name = "ResultText"
+        Me.ResultText.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.ResultText.Size = New System.Drawing.Size(762, 167)
         Me.ResultText.TabIndex = 7
         '

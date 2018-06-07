@@ -4,6 +4,7 @@ Imports System.DirectoryServices
 Imports System.Text
 Imports System.ComponentModel
 Imports Microsoft.Identity.Client
+Imports System.Collections.Specialized
 
 Public Class Form1
 
@@ -144,11 +145,11 @@ Public Class Form1
 
 
 
-    Private Shared ClientId As String = "8ff30cd3-989f-455f-9f68-17fc8091d76b"
+    Private Shared ClientId As String = "3ab48e8a-c033-4f17-922d-17faff310eed"
     Public Shared PublicClientApp As PublicClientApplication = New PublicClientApplication(ClientId)
 
     'Set the API Endpoint to Graph 'me' endpoint
-    Dim _graphAPIEndpoint As String = "https://graph.microsoft.com/v1.0/me"
+    Dim _graphAPIEndpoint As String = "https://graph.microsoft.com/v1.0/me/"
     Dim _scopes As String() = New String() {"user.read"}
 
     ''' <summary>
@@ -164,6 +165,7 @@ Public Class Form1
         Try
             Dim request = New System.Net.Http.HttpRequestMessage(System.Net.Http.HttpMethod.[Get], url)
             request.Headers.Authorization = New System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token)
+            request.Headers.Add("api-version", "1.5")
             response = Await httpClient.SendAsync(request)
             Dim content = Await response.Content.ReadAsStringAsync()
             Return content
@@ -185,6 +187,8 @@ Public Class Form1
             TokenInfoText.Text += $"Access Token: {authResult.AccessToken}" & Environment.NewLine
         End If
     End Sub
+
+
 
 
     ''' <summary>
@@ -281,7 +285,9 @@ Public Class Form1
 #End Region
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
+        If ResultText.Text.Contains("BFIT6B") Then
+            MsgBox("Klasse: BFIT6B")
+        End If
     End Sub
 
     Private Async Sub Button4_ClickAsync(sender As Object, e As EventArgs) Handles CallGraphButton.Click
@@ -310,5 +316,9 @@ Public Class Form1
             ResultText.Text = Await GetHttpContentWithToken(_graphAPIEndpoint, authResult.AccessToken)
             DisplayBasicTokenInfo(authResult)
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
     End Sub
 End Class
