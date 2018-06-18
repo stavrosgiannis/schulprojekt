@@ -1,10 +1,8 @@
 ﻿Imports System.IO
 Imports System.Net
-Imports System.DirectoryServices
 Imports System.Text
 Imports System.ComponentModel
 Imports Microsoft.Identity.Client
-Imports System.Collections.Specialized
 
 Public Class Form1
 
@@ -211,6 +209,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Form2.Show()
+
         Try
             If My.Computer.FileSystem.FileExists(Application.StartupPath & "\update.bat") Then
                 File.Delete(Application.StartupPath & "\update.bat")
@@ -285,9 +285,13 @@ Public Class Form1
 #End Region
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If ResultText.Text.Contains("BFIT6B") Then
-            MsgBox("Klasse: BFIT6B")
-        End If
+        For i As Integer = 0 To Form2.klassen.Count - 1
+            If ResultText.Text.Contains(Form2.klassen(i).ToString) Then
+                MsgBox("Klasse: " & Form2.klassen(i).ToString)
+            End If
+        Next
+
+
     End Sub
 
     Private Async Sub Button4_ClickAsync(sender As Object, e As EventArgs) Handles CallGraphButton.Click
