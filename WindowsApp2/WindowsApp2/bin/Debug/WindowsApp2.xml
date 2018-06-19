@@ -55,10 +55,11 @@ Perform an HTTP Get request To a URL Using an HTTP Authorization header
 <param name = "token" > The token</param>
 <returns>String containing the results Of the Get operation</returns>
 </member>
-<member name="M:WindowsApp2.Form1.DisplayBasicTokenInfo(Microsoft.Identity.Client.AuthenticationResult)">
+<member name="F:WindowsApp2.Form1.name">
  <summary>
  Display basic information contained in the token
  </summary>
+ 
 </member>
 <member name="M:WindowsApp2.Form1.signout">
  <summary>

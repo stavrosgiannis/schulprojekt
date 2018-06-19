@@ -175,10 +175,15 @@ Public Class Form1
     ''' <summary>
     ''' Display basic information contained in the token
     ''' </summary>
+    ''' 
+    Public Shared name As String
+    Public Shared username As String
     Private Sub DisplayBasicTokenInfo(ByVal authResult As AuthenticationResult)
         TokenInfoText.Text = ""
 
         If authResult IsNot Nothing Then
+            name = authResult.User.Name
+            username = authResult.User.DisplayableId
             TokenInfoText.Text += $"Name: {authResult.User.Name}" & Environment.NewLine
             TokenInfoText.Text += $"Username: {authResult.User.DisplayableId}" & Environment.NewLine
             TokenInfoText.Text += $"Token Expires: {authResult.ExpiresOn.ToLocalTime()}" & Environment.NewLine
@@ -322,6 +327,7 @@ Public Class Form1
         If authResult IsNot Nothing Then
             ResultText.Text = Await GetHttpContentWithToken(_graphAPIEndpoint, authResult.AccessToken)
             DisplayBasicTokenInfo(authResult)
+            Form3.Show()
         End If
     End Function
 
