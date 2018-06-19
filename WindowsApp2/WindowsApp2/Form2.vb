@@ -1,9 +1,10 @@
 ﻿Imports Microsoft.Graph
+Imports WindowsApp2.Klassen
 
 Public Class Form2
     Public klassen(70) As String
-    Private Function GetElementByName(ByVal elementName As String)
-
+    Public Function GetElementByName(ByVal elementName As String)
+        ProgressBar1.Value = 0
         'Waiting for page to load function
         If WebBrowser1.ReadyState = WebBrowserReadyState.Complete Then
 
@@ -12,21 +13,16 @@ Public Class Form2
                 If element.Name IsNot Nothing Then
                     If InStr(element.Name, elementName) Then
                         Debug.Print(element.Id & " Found!")
-
-                        For i As Integer = 0 To 70
+                        For i As Integer = 0 To element.All.Count - 1
+                            ProgressBar1.Maximum = element.All.Count - 1
+                            'MsgBox(ProgressBar1.Maximum.ToString)
+                            ProgressBar1.Increment(1)
                             klassen(i) = (element.All.Item(i).InnerText)
                             ListBox1.Items.Add(klassen(i))
                         Next
-
                     End If
                 End If
-
             Next
-
-
-            '\/ - Perform Actions
-            'WebBrowser1.Document.GetElementById(fb_button).SetAttribute("value", Password) 'or InvokeMember("submit") or InvokeMember("click")
-            'MsgBox("Done")
         End If
     End Function
 
@@ -40,7 +36,4 @@ Public Class Form2
         Call GetElementByName("element")
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-
-    End Sub
 End Class

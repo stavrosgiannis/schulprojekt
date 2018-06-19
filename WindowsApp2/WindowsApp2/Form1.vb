@@ -209,6 +209,7 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+
         Form2.Show()
 
         Try
@@ -225,6 +226,7 @@ Public Class Form1
             MsgBox("Oops! Looks like something went wrong..", MsgBoxStyle.Critical)
             Application.Exit()
         End Try
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -294,7 +296,8 @@ Public Class Form1
 
     End Sub
 
-    Private Async Sub Button4_ClickAsync(sender As Object, e As EventArgs) Handles CallGraphButton.Click
+    Public Async Function mainAsync() As Task
+
         ' &lt;summary&gt;
         ' Call AcquireTokenAsync - to acquire a token requiring user to sign-in
         ' &lt;/summary&gt;
@@ -320,9 +323,29 @@ Public Class Form1
             ResultText.Text = Await GetHttpContentWithToken(_graphAPIEndpoint, authResult.AccessToken)
             DisplayBasicTokenInfo(authResult)
         End If
+    End Function
+
+    Private Async Sub Button4_ClickAsync(sender As Object, e As EventArgs) Handles CallGraphButton.Click
+        Form2.GetElementByName("element")
+        mainAsync()
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
+    End Sub
+
+    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+
+    End Sub
+
+    Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Timer1.Enabled = True
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Form2.GetElementByName("element")
+        mainAsync()
+        Timer1.Stop()
     End Sub
 End Class

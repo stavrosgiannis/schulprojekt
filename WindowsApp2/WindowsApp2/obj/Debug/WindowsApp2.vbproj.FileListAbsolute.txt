@@ -36,3 +36,4 @@ C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\Mic
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\Microsoft.Graph.Core.xml
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.Form2.resources
+C:\Users\Stavros\source\repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.vbprojAssemblyReference.cache

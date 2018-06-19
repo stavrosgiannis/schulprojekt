@@ -22,6 +22,7 @@ Partial Class Form1
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
@@ -30,6 +31,7 @@ Partial Class Form1
         Me.TokenInfoText = New System.Windows.Forms.TextBox()
         Me.CallGraphButton = New System.Windows.Forms.Button()
         Me.ResultText = New System.Windows.Forms.TextBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Button1
@@ -105,6 +107,10 @@ Partial Class Form1
         Me.ResultText.Size = New System.Drawing.Size(762, 167)
         Me.ResultText.TabIndex = 7
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -135,4 +141,5 @@ Partial Class Form1
     Friend WithEvents TokenInfoText As TextBox
     Friend WithEvents CallGraphButton As Button
     Friend WithEvents ResultText As TextBox
+    Friend WithEvents Timer1 As Timer
 End Class
