@@ -65,3 +65,4 @@ C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\De
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.exe
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.xml
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.pdb
+C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.vbprojAssemblyReference.cache

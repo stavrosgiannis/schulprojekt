@@ -291,15 +291,6 @@ Public Class Form1
     End Function
 #End Region
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        For i As Integer = 0 To Form2.klassen.Count - 1
-            If ResultText.Text.Contains(Form2.klassen(i).ToString) Then
-                MsgBox("Klasse: " & Form2.klassen(i).ToString)
-            End If
-        Next
-
-
-    End Sub
 
     Public Async Function mainAsync() As Task
 
