@@ -4,7 +4,9 @@
         Label2.Text = "Email: " & Form1.username
         For i As Integer = 0 To Form2.klassen.Count - 1
             If Form1.ResultText.Text.Contains(Form2.klassen(i).ToString) Then
-                Label3.Text = ("Klasse: " & Form2.klassen(i).ToString)
+                If (Form2.klassen(0) = Nothing) = False Then
+                    Label3.Text = ("Klasse: " & Form2.klassen(i).ToString)
+                End If
             End If
         Next
     End Sub

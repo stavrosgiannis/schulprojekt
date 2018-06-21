@@ -23,8 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TokenInfoText = New System.Windows.Forms.TextBox()
@@ -34,27 +32,10 @@ Partial Class Form1
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(560, 429)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "write"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(694, 429)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "read"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'ProgressBar1
         '
@@ -78,7 +59,7 @@ Partial Class Form1
         '
         'TokenInfoText
         '
-        Me.TokenInfoText.Location = New System.Drawing.Point(7, 109)
+        Me.TokenInfoText.Location = New System.Drawing.Point(8, 148)
         Me.TokenInfoText.Multiline = True
         Me.TokenInfoText.Name = "TokenInfoText"
         Me.TokenInfoText.Size = New System.Drawing.Size(762, 90)
@@ -86,7 +67,7 @@ Partial Class Form1
         '
         'CallGraphButton
         '
-        Me.CallGraphButton.Location = New System.Drawing.Point(404, 429)
+        Me.CallGraphButton.Location = New System.Drawing.Point(662, 458)
         Me.CallGraphButton.Name = "CallGraphButton"
         Me.CallGraphButton.Size = New System.Drawing.Size(107, 23)
         Me.CallGraphButton.TabIndex = 6
@@ -95,7 +76,7 @@ Partial Class Form1
         '
         'ResultText
         '
-        Me.ResultText.Location = New System.Drawing.Point(7, 241)
+        Me.ResultText.Location = New System.Drawing.Point(8, 280)
         Me.ResultText.Multiline = True
         Me.ResultText.Name = "ResultText"
         Me.ResultText.ScrollBars = System.Windows.Forms.ScrollBars.Both
@@ -118,11 +99,10 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.TextBox2)
         Me.TabPage1.Controls.Add(Me.TokenInfoText)
         Me.TabPage1.Controls.Add(Me.ResultText)
-        Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.CallGraphButton)
-        Me.TabPage1.Controls.Add(Me.Button2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -141,6 +121,20 @@ Partial Class Form1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.White
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.Font = New System.Drawing.Font("Bahnschrift Condensed", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(8, 17)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(761, 111)
+        Me.TextBox2.TabIndex = 8
+        Me.TextBox2.Text = "Hier finden sie Debug Informationen von der REQUEST REST API von Microsoft Office" &
+    " 365"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -152,7 +146,7 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "Schulprojekt"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
@@ -160,9 +154,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TokenInfoText As TextBox
@@ -172,4 +163,5 @@ Partial Class Form1
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents TextBox2 As TextBox
 End Class
