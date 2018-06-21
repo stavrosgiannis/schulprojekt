@@ -55,7 +55,6 @@ C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\bin\De
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\Microsoft.Graph.Core.xml
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\Microsoft.Identity.Client.xml
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\bin\Debug\Newtonsoft.Json.xml
-C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.vbprojAssemblyReference.cache
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.Form1.resources
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.Form2.resources
 C:\Users\StavrosGiannis\Source\Repos\schulprojekt\WindowsApp2\WindowsApp2\obj\Debug\WindowsApp2.Form3.resources
